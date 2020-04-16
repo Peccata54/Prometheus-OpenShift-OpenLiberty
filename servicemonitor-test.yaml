@@ -1,0 +1,23 @@
+﻿apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+    labels:
+     k8s-app: prometheus
+     name: test
+    namespace: prometheus-test
+    name: test
+spec:
+  endpoints:
+    - interval: 30s
+    - bearerTokenSecret:
+        key: ''
+      port: 9080-tcp
+  namespaceSelector:
+    matchNames:
+      - dev-test
+  selector:
+    matchLabels:
+      k8s-app: ''
+
+
+

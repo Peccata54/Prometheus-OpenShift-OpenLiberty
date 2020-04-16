@@ -1,0 +1,12 @@
+apiVersion: openliberty.io/v1beta1
+kind: OpenLibertyApplication
+metadata:
+  name: test
+  namespace: dev-test
+spec:
+  replicas: 1
+  applicationImage: 'yarod/microprofile-monitoring'
+  expose: true
+  monitoring:
+    labels:
+      k8s-app: ''
